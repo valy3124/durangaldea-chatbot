@@ -6,6 +6,15 @@ import errorIcon from '@/assets/images/error.svg';
 
 function ChatMessages({ messages, isLoading }) {
   const scrollContentRef = useAutoScroll(isLoading);
+
+  function extractParaphrased(text) {
+    const marker = 'Paraphrased answer:';
+    const idx = text.indexOf(marker);
+    if (idx !== -1) {
+      return text.substring(idx + marker.length).trim();
+    }
+    return text; // dacă nu găsește, returnează tot textul original
+  }
   
   return (
     <div ref={scrollContentRef} className='grow space-y-4'>
@@ -22,7 +31,7 @@ function ChatMessages({ messages, isLoading }) {
             <div className='markdown-container'>
               {(loading && !content) ? <Spinner />
                 : (role === 'assistant')
-                  ? <Markdown>{content}</Markdown>
+                  ? <Markdown>{extractParaphrased(content)}</Markdown>
                   : <div className='whitespace-pre-line'>{content}</div>
               }
             </div>

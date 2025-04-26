@@ -46,11 +46,11 @@ function Chatbot() {
   return (
     <div className='relative grow flex flex-col gap-6 pt-6'>
       {messages.length === 0 && (
-        <div className='relative w-full h-screen overflow-hidden'>
+        <div className='relative w-full h-[calc(100vh-8rem)] md:h-[calc(100vh-10rem)]'>
           <img 
             src={firstImage} 
             alt='Chatbot Introduction' 
-            className='absolute inset-0 w-full h-full object-cover' 
+            className='w-full h-full object-contain md:object-cover rounded-lg'
           />
         </div>
       )}

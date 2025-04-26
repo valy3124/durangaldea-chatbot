@@ -4,6 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/durangaldea-chatbot/',   // 👈 ADD THIS LINE
   server: {
     port: 3000,
   },
