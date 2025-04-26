@@ -2,8 +2,7 @@
   "name": "durangaldea-chatbot",       
   "private": true,
   "version": "0.0.0",
-  "type": "module",
-  "homepage": "https://valy3124.github.io/durangaldea-chatbot",   
+  "type": "module",  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
